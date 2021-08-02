@@ -40,9 +40,23 @@
           <input type="text" name="" id="fileURL" readonly />
           <img src="./copyicon.svg" alt="" id="copybtn" />
         </div>
+        <p>Or send via Email</p>
+        <div class="email-container">
+          <form id="email-form">
+            <div class="filed">
+              <label for="sender">Your Email</label>
+              <input type="email" name="from-email" required id="sender" />
+            </div>
+            <div class="filed">
+              <label for="reciever">Receiver's Email</label>
+              <input type="email" name="to-email" required id="reciever" />
+            </div>
+            <button type="submit">Send</button>
+          </form>
+        </div>
       </div>
-      <div class="email-container"></div>
     </div>
+    <div class="toast">Copied to clipboard</div>
     <script src="index.js"></script>
   </body>
 </html>

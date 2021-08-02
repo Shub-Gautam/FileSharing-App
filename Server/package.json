@@ -1,0 +1,19 @@
+{
+  "name": "Server",
+  "version": "1.0.0",
+  "description": "Server for file sharing app",
+  "main": "server.js",
+  "author": "Shubham Gautam",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "serve": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.5",
+    "multer": "^1.4.2",
+    "uuid": "^8.3.2"
+  }
+}

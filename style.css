@@ -11,6 +11,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 
 body,
@@ -135,7 +136,7 @@ body,
   display: none;
 }
 
-p.expire {
+p {
   opacity: 0.7;
   text-align: center;
 }
@@ -161,4 +162,76 @@ p.expire {
   right: 7px;
   top: 10px;
   cursor: pointer;
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+}
+
+.email-container form {
+  width: 100%;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.email-container .filed {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  width: 400px;
+}
+
+.email-container label {
+  font-size: 18px;
+}
+
+.email-container input {
+  font-size: 18px;
+  border: none;
+  border-bottom: 2px solid #413838;
+  text-align: center;
+}
+
+.email-container input:focus {
+  outline: none;
+}
+
+.email-container button {
+  font-size: 18px;
+  padding: 8px 40px;
+  margin-top: 15px;
+  background: var(--main-bg-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toast {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 60px);
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  background: rgb(99, 82, 61);
+  color: #fff;
+  transition: transform ease-in-out 0.2s;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 1),
+    0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --container-width: 320px;
+  }
+  .email-container .filed {
+    flex-direction: column;
+    width: 300px;
+  }
 }
