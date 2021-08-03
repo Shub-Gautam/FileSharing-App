@@ -17,7 +17,7 @@ const emailForm = document.querySelector("#email-form");
 
 const toast = document.querySelector(".toast");
 
-const host = "https:/innshare.herokuapp.com/";
+const host = "https://filesharebyshubham.herokuapp.com/";
 const uploadURL = `${host}api/files`;
 const emailURL = `${host}api/files/send`;
 
