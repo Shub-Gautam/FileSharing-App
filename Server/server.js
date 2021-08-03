@@ -9,6 +9,7 @@ const connectDB = require("./config/db");
 connectDB();
 
 app.use(express.static("public"));
+app.use(express.json());
 
 //Template engine
 app.set("views", path.join(__dirname, "/views"));
