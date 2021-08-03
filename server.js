@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 
 const app = express();
 
@@ -7,6 +8,11 @@ const PORT = process.env.PORT || 8080;
 
 const connectDB = require("./config/db");
 connectDB();
+const corsOption = {
+  origin: process.env.ALLOWED_CLIENTS.split(","),
+};
+
+app.use(cors(corsOption));
 
 app.use(express.static("public"));
 app.use(express.json());
