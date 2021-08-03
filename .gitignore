@@ -1,4 +1,4 @@
-Server/.env
-Server/node_modules/
-Server/Uploads/
+.env
+node_modules/
+Uploads/
 !Uploads/.gitkeep
