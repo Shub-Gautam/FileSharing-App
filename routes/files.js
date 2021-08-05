@@ -8,7 +8,7 @@ const sendMail = require("../services/emailService");
 dotenv.config();
 
 let storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "uploads/"),
+  destination: (req, file, cb) => cb(null, "Uploads/"),
   filename: (req, file, cb) => {
     const uniqueName = `${Date.now()}-${Math.round(
       Math.random() * 1e9
