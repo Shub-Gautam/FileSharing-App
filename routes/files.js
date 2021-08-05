@@ -67,6 +67,8 @@ router.post("/send", async (req, res) => {
 
   const response = await file.save();
 
+  
+
   //send email
   const sendMail = require("../services/emailService");
   sendMail({
@@ -79,6 +81,7 @@ router.post("/send", async (req, res) => {
       downloadLink: `${process.env.APP_BASE_URL}/files/${file.uuid}`,
       size: parseInt(file.size) + "KB",
       expires: "24 hrs",
+      o,
     }),
   });
 
