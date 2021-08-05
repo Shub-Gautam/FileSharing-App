@@ -6,6 +6,7 @@
   "author": "Shubham Gautam",
   "license": "MIT",
   "scripts": {
+    "heroku-postbuild": "mkdir Uploads",
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
