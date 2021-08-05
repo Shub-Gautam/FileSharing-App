@@ -26,9 +26,9 @@ router.post("/", (request, res) => {
   // Store file
   uplaod(request, res, async (err) => {
     //  Validate request
-    if (!request.file) {
-      return res.json({ error: "All fields are required." });
-    }
+    // if (!request.file) {
+    //   return res.json({ error: "All fields are required." });
+    // }
 
     if (err) {
       return res.status(500).send({ error: err.message });
@@ -66,8 +66,6 @@ router.post("/send", async (req, res) => {
   file.receiver = emailTo;
 
   const response = await file.save();
-
-  
 
   //send email
   const sendMail = require("../services/emailService");
