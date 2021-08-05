@@ -1,5 +1,5 @@
 const dropZone = document.querySelector(".drop-zone");
-const fileinput = document.querySelector("#fileinput");
+const fileInput = document.querySelector("#fileinput");
 const browseBtn = document.querySelector(".browseBtn");
 
 const progressContainer = document.querySelector(".progress-container");
@@ -22,7 +22,7 @@ const uploadURL = `${host}api/files`;
 const emailURL = `${host}api/files/send`;
 
 const resetFileInput = () => {
-  fileinput.value = "";
+  fileInput.value = "";
 };
 
 dropZone.addEventListener("dragover", (e) => {
@@ -42,13 +42,15 @@ dropZone.addEventListener("drop", (e) => {
   e.preventDefault();
   dropZone.classList.remove("dragged");
   const files = e.dataTransfer.files;
+  console.log("File droped : " + files.length);
   if (files.length) {
-    fileinput.file = files;
+    console.log("file added to variable");
+    fileInput.files = files;
     uploadFile();
   }
 });
 
-fileinput.addEventListener("change", () => {
+fileInput.addEventListener("change", () => {
   uploadFile();
 });
 
@@ -59,11 +61,16 @@ copyBtn.addEventListener("click", () => {
 });
 
 browseBtn.addEventListener("click", () => {
-  fileinput.click();
+  fileInput.click();
 });
 
 const uploadFile = () => {
-  if (fileinput.files.length > 1) {
+  console.log("file added uploading");
+  const file = fileInput.files[0];
+  console.log(file);
+  console.log("uploadable file length : " + file.length);
+
+  if (fileInput.files.length > 1) {
     resetFileInput();
     showtoast("only upload one file");
     return;
@@ -71,7 +78,6 @@ const uploadFile = () => {
 
   progressContainer.style.display = "block";
 
-  const file = fileinput.files[0];
   const formData = new FormData();
   formData.append("myfile", file);
 

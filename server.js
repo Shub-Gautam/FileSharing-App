@@ -12,7 +12,7 @@ const corsOption = {
   origin: process.env.ALLOWED_CLIENTS.split(","),
 };
 
-app.use(cors(corsOption));
+app.use(cors());
 
 app.use(express.static("public"));
 app.use(express.json());
